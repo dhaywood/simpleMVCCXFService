@@ -24,6 +24,12 @@ public class SampleServiceImpl implements SampleService {
         if(!StringUtils.isEmpty(firstName) && "Dave".equalsIgnoreCase(firstName)) {
             throw new InvalidUserException("Sorry Dave");
         }
+        private boolean howTodoIt(String user)
+        	// mukadder changes to user profile
+        	if(user!=null){
+        		throw new RunTimeException("user can not be null");
+        				
+        }
 
         return userDao.save(user);
 
