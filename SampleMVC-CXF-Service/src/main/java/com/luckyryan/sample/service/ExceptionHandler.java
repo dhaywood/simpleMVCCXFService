@@ -8,6 +8,8 @@ import javax.ws.rs.ext.ExceptionMapper;
 public class ExceptionHandler implements ExceptionMapper<InvalidUserException> {
     public Response toResponse(InvalidUserException exception) {
         Response.Status status;
+        // Dean - add private field
+        final private string buField;
 
         status = Response.Status.INTERNAL_SERVER_ERROR;
 
