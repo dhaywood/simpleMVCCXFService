@@ -33,14 +33,7 @@
     <jpa:repositories
             base-package="com.luckyryan.sample.dao"/>
 
-    <bean class="org.springframework.orm.jpa.JpaTransactionManager"
-          id="transactionManager">
-        <property name="entityManagerFactory"
-                  ref="entityManagerFactory"/>
-        <property name="jpaDialect">
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"/>
-        </property>
-    </bean>
+ <!-- DEAN - removed a bean -->
 
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -48,7 +41,8 @@
         <property name="packagesToScan" value="com.luckyryan.sample.dao.model"/>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-                <property name="generateDdl" value="true"/>
+  <!-- DEAN - changed to false -->
+                <property name="generateDdl" value="false"/>
                 <property name="showSql" value="false"/>
                 <property name="databasePlatform" value="org.hibernate.dialect.MySQLDialect"/>
                 <property name="database" value="MYSQL"/>
